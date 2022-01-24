@@ -89,7 +89,7 @@ const Tutorial = (props) => {
 
             <div className="form-group">
               <label>
-                <strong>Status:</strong>
+                <strong className="mr-2">Status:</strong>
               </label>
               {currentTutorial.published ? "Published" : "Pending"}
             </div>

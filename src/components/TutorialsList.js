@@ -2,6 +2,7 @@ import React, { useState /*, useEffect */ } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 import TutorialDataService from "../services/TutorialService";
 import Tutorial from "./Tutorial";
+import './TutorialsList.css'
 
 const TutorialsList = () => {
   // const [tutorials, setTutorials] = useState([]);
@@ -11,7 +12,7 @@ const TutorialsList = () => {
   /* use react-firebase-hooks */
   const [tutorials, loading, error] = useCollection(TutorialDataService.getAll().orderBy("title", "asc"));
 
-  /* manually listen for value events 
+  /* manually listen for value events
   const onDataChange = (items) => {
     let tutorials = [];
 
@@ -65,6 +66,7 @@ const TutorialsList = () => {
             tutorials &&
             tutorials.docs.map((tutorial, index) => ( /* tutorials.map */
               <li
+                style={{ cursor:'pointer' }}
                 className={"list-group-item " + (index === currentIndex ? "active" : "")}
                 onClick={() => setActiveTutorial(tutorial, index)}
                 key={tutorial.id}
