@@ -1,12 +1,15 @@
 import firebase from "../firebase";
+//import { useHistory } from "react-router-dom";
 
 const db = firebase.collection("/tutorials");
+//const history = useHistory();
 
 const getAll = () => {
   return db;
 };
 
 const create = (data) => {
+
   return db.add(data);
 };
 

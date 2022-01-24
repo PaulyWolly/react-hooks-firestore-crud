@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TutorialDataService from "../services/TutorialService";
+import { useHistory } from "react-router-dom";
 
 const AddTutorial = () => {
   const initialTutorialState = {
@@ -15,6 +16,8 @@ const AddTutorial = () => {
     setTutorial({ ...tutorial, [name]: value });
   };
 
+  const history = useHistory();
+
   const saveTutorial = () => {
     var data = {
       title: tutorial.title,
@@ -25,6 +28,10 @@ const AddTutorial = () => {
     TutorialDataService.create(data)
       .then(() => {
         setSubmitted(true);
+        setTimeout(() => {
+          history.push("/tutorials")
+        }, 2000)
+
       })
       .catch(e => {
         console.log(e);
@@ -36,7 +43,11 @@ const AddTutorial = () => {
     setSubmitted(false);
   };
 
+
+
+
   return (
+
     <div className="submit-form">
       {submitted ? (
         <div>
