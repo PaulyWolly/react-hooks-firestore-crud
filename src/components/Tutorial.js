@@ -84,7 +84,7 @@ const Tutorial = (props) => {
                 rows="3"
                 name="description"
                 required
-                value={tutorial.description}
+                value={currentTutorial.description}
                 onChange={handleInputChange}
               >
               </textarea>
