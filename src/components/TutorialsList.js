@@ -58,6 +58,7 @@ const TutorialsList = () => {
   return (
     <div className="list row">
 
+
       <div className="col-md-6">
         <h4>Tutorials List</h4>
         <div className="tutorial-list">
@@ -81,6 +82,7 @@ const TutorialsList = () => {
         </div>
       </div>
 
+
       <div className="col-md-6">
         {currentTutorial ? (
           <Tutorial tutorial={currentTutorial} refreshList={refreshList} />
@@ -91,7 +93,6 @@ const TutorialsList = () => {
           </div>
         )}
       </div>
-
     </div>
   );
 };

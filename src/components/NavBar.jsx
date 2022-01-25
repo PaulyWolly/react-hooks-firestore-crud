@@ -8,6 +8,7 @@ export default function NavBar() {
           React-Firebase w/Hooks
         </a>
         <div className="navbar-nav mr-auto">
+
           <div className='menu-items'>
             <li className="nav-item">
               <NavLink to={"/tutorials"} className="nav-link">
